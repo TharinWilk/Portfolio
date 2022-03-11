@@ -133,7 +133,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: URL('/hex-background.png');
+  background-image: URL('./hex-background.png');
   box-shadow: inset 0 0 1rem 1rem #f4f4f4;
   &::before  {
     position: absolute;
