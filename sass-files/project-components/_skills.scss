@@ -1,0 +1,125 @@
+.section-title {
+  padding: 2.5rem 0;
+  background-color: $primary;
+
+  h2 {
+    text-align: center;
+    color: $secondary;
+  }
+}
+
+.skills-area {
+  @include col-center-center;
+  position: relative;
+  padding: 2.5rem;
+
+  .skill-container {
+    @include row-center-center;
+    position: absolute;
+    margin: 2px auto;
+    height: 70px;
+    width: 80px;
+    background-color: $primary;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: 0.5s;
+
+    &:hover {
+      background: $blue;
+    }
+
+    @include md {
+      height: 140px;
+      width: 160px;
+      margin: 5px auto;
+    }
+
+    .skill {
+      position: relative;
+      z-index: 20;
+
+      .skill-icon {
+        width: 2rem;
+        height: 2rem;
+
+        @include md {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+
+      .html {
+        color: #f06529;
+      }
+
+      .css {
+        color: #2965f1;
+      }
+
+      .js {
+        color: #F0DB4F;
+      }
+
+      .vue {
+        color: #42b883;
+      }
+
+      .sass {
+        color: #CD6799;
+      }
+
+      .bootstrap {
+        color: #563d7c;
+      }
+    }
+
+    .skill-hex {
+      @include absolute-center;
+      height: 63px;
+      width: 72px;
+      background-color: #f4f4f4;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      z-index: 10;
+
+      @include md {
+        height: 126px;
+        width: 142px;
+      }
+    }
+  }
+
+  #html-hex, #vue-hex, #bootstrap-hex {
+    position: relative;
+  }
+
+  #css-hex {
+    transform: translate(-67px, -37px);
+
+    @include md{
+      transform: translate(-125px, -75px);
+    }
+  }
+
+  #js-hex {
+    transform: translate(67px, -37px);
+
+    @include md{
+      transform: translate(125px, -75px);
+    }
+  }
+
+  #sass-hex {
+    transform: translate(-67px, 37px);
+
+    @include md{
+      transform: translate(-125px, 75px);
+    }
+  }
+
+  #tailwind-hex {
+    transform: translate(67px, 37px);
+
+    @include md{
+      transform: translate(125px, 75px);
+    }
+  }
+}

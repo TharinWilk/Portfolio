@@ -1,0 +1,55 @@
+.landing-bg {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: URL('/hex-background.png');
+  box-shadow: inset 0 0 1rem 1rem #f4f4f4;
+}
+
+.landing-content {
+  height: min(80vh);
+  padding-top: 4.25rem;
+  padding-bottom: 4.25rem;
+  text-align: center;
+
+  span {
+    display: none;
+    @include md {
+      @include row-center-center;
+      font-size: $responsive-font-lg;
+      transition: 1.5s;
+      opacity: 0;
+      z-index: 1;
+    }
+  }
+
+  h1 {
+    font-size: $responsive-font-xl;
+    font-weight: $font-weight-7;
+  }
+
+  h2  {
+    font-size: $responsive-font-md
+  }
+
+  button {
+    @include button;
+
+    &:hover {
+      border-color: $blue;
+      background: $blue;
+      color: $white;
+    }
+  }
+}
+
+.light-effect {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  filter: blur(4rem);
+  z-index: -1;
+  transition: 0.15s;
+}

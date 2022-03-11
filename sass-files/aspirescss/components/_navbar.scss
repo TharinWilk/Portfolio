@@ -1,0 +1,40 @@
+%flex-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+};
+
+.shadow {
+  box-shadow: $base-box-shadow
+}
+
+.navbar {
+  @extend %flex-layout;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: $base-padding $base-padding;
+  transition: .4s ease-in;
+  z-index: 100;
+
+  @include sm {
+  padding: $base-padding $base-padding * 2;
+  }
+
+  .site-title {
+    font-size: $font-size-lg;
+  }
+
+  .container {
+    @extend %flex-layout
+  }
+};
+
+@each $key, $val in $colors {
+  .navbar-#{$key} {
+    @extend .navbar;
+    background-color: $val;
+  }
+};

@@ -1,0 +1,13 @@
+#home {
+  background: transparent;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: 0.5s;
+
+  @include lg {
+    font-size: 4rem;
+  }
+}

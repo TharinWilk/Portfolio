@@ -1,0 +1,67 @@
+@use 'sass:math';
+
+.border {
+  border-color: black;
+}
+
+$borders: (
+  "$border-thickness": (
+    "prefix": "border",
+    values: (
+      "0": 0,
+      "1": $base-border-thickness,
+      "2": $border-thickness-2,
+      "3": $border-thickness-3,
+      "4": $border-thickness-4,
+      "5": $border-thickness-5,
+      "6": $border-thickness-6,
+      "7": $border-thickness-7,
+      "8": $border-thickness-8,
+    ),
+  ),
+  "$border-radius": (
+    "prefix": "radius",
+    values: (
+      "0": 0,
+      "md": $base-border-radius,
+      "xs": $border-radius-xs,
+      "sm": $border-radius-sm,
+      "lg": $border-radius-lg,
+      "xl": $border-radius-xl,
+      "rounded": $border-radius-rounded,
+    ),
+  ),
+  "$border-style": (
+    "prefix": "border",
+    values: (
+      "dot": dotted,
+      "dash": dashed,
+      "solid": solid,
+      "double": double,
+      "groove": groove,
+      "ridge": ridge,
+      "inset": inset,
+      "outset": outset,
+      "none": none,
+      "hidden": hidden,
+    ),
+  ),
+);
+
+// Generate border classes
+@each $property, $map in $borders {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if($k == 'default') {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}

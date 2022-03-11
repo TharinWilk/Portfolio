@@ -1,0 +1,226 @@
+@use 'sass:math';
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.static {
+  position: static;
+}
+
+.sticky {
+  position: sticky;
+}
+
+$positions: (
+  "top": (
+    "prefix": "top",
+    values: (
+     "0": 0,
+     "1px": 1px,
+     "2px": 2px,
+     "4px": 4px,
+     "6px": 6px,
+     "8px": 8px,
+     "10px": 10px,
+     "12px": 12px,
+     "14px": 14px,
+     "1": 1rem,
+     "20px": 20px,
+     "24px": 24px,
+     "28px": 28px,
+     "2": 2rem,
+     "36px": 36px,
+     "40px": 40px,
+     "44px": 44px,
+     "3": 3rem,
+     "4": 4rem,
+     "5": 5rem,
+     "6": 6rem,
+     "7": 7rem,
+     "8": 8rem,
+     "9": 9rem,
+     "10": 10rem,
+     "11": 11rem,
+     "12": 12rem,
+     "13": 13rem,
+     "14": 14rem,
+     "15": 15rem,
+     "16": 16rem,
+     "18": 18rem,
+     "20": 20rem,
+     "24": 24rem,
+     "28": 28rem,
+     "32": 32rem,
+     "36": 36rem,
+     "40": 40rem,
+     "48": 48rem,
+     "56": 56rem,
+     "60": 60rem,
+    )
+  ),
+  "left": (
+    "prefix": "left",
+    values: (
+    "0": 0,
+    "1px": 1px,
+    "2px": 2px,
+    "4px": 4px,
+    "6px": 6px,
+    "8px": 8px,
+    "10px": 10px,
+    "12px": 12px,
+    "14px": 14px,
+    "1": 1rem,
+    "20px": 20px,
+    "24px": 24px,
+    "28px": 28px,
+    "2": 2rem,
+    "36px": 36px,
+    "40px": 40px,
+    "44px": 44px,
+    "3": 3rem,
+    "4": 4rem,
+    "5": 5rem,
+    "6": 6rem,
+    "7": 7rem,
+    "8": 8rem,
+    "9": 9rem,
+    "10": 10rem,
+    "11": 11rem,
+    "12": 12rem,
+    "13": 13rem,
+    "14": 14rem,
+    "15": 15rem,
+    "16": 16rem,
+    "18": 18rem,
+    "20": 20rem,
+    "24": 24rem,
+    "28": 28rem,
+    "32": 32rem,
+    "36": 36rem,
+    "40": 40rem,
+    "48": 48rem,
+    "56": 56rem,
+    "60": 60rem,
+    )
+  ),
+  "right": (
+    "prefix": "right",
+    values: (
+    "0": 0,
+    "1px": 1px,
+    "2px": 2px,
+    "4px": 4px,
+    "6px": 6px,
+    "8px": 8px,
+    "10px": 10px,
+    "12px": 12px,
+    "14px": 14px,
+    "1": 1rem,
+    "20px": 20px,
+    "24px": 24px,
+    "28px": 28px,
+    "2": 2rem,
+    "36px": 36px,
+    "40px": 40px,
+    "44px": 44px,
+    "3": 3rem,
+    "4": 4rem,
+    "5": 5rem,
+    "6": 6rem,
+    "7": 7rem,
+    "8": 8rem,
+    "9": 9rem,
+    "10": 10rem,
+    "11": 11rem,
+    "12": 12rem,
+    "13": 13rem,
+    "14": 14rem,
+    "15": 15rem,
+    "16": 16rem,
+    "18": 18rem,
+    "20": 20rem,
+    "24": 24rem,
+    "28": 28rem,
+    "32": 32rem,
+    "36": 36rem,
+    "40": 40rem,
+    "48": 48rem,
+    "56": 56rem,
+    "60": 60rem,
+    )
+  ),
+  "bottom": (
+    "prefix": "bottom",
+    values: (
+    "0": 0,
+    "1px": 1px,
+    "2px": 2px,
+    "4px": 4px,
+    "6px": 6px,
+    "8px": 8px,
+    "10px": 10px,
+    "12px": 12px,
+    "14px": 14px,
+    "1": 1rem,
+    "20px": 20px,
+    "24px": 24px,
+    "28px": 28px,
+    "2": 2rem,
+    "36px": 36px,
+    "40px": 40px,
+    "44px": 44px,
+    "3": 3rem,
+    "4": 4rem,
+    "5": 5rem,
+    "6": 6rem,
+    "7": 7rem,
+    "8": 8rem,
+    "9": 9rem,
+    "10": 10rem,
+    "11": 11rem,
+    "12": 12rem,
+    "13": 13rem,
+    "14": 14rem,
+    "15": 15rem,
+    "16": 16rem,
+    "18": 18rem,
+    "20": 20rem,
+    "24": 24rem,
+    "28": 28rem,
+    "32": 32rem,
+    "36": 36rem,
+    "40": 40rem,
+    "48": 48rem,
+    "56": 56rem,
+    "60": 60rem,
+    )
+  )
+);
+
+// Generate position classes
+@each $property, $map in $positions {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if($k == 'default') {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}

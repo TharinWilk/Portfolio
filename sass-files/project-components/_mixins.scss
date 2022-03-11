@@ -1,0 +1,12 @@
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin button {
+  background: transparent;
+  font-weight: bold;
+  transition: 0.5s;
+}

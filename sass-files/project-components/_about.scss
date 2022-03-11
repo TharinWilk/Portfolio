@@ -1,0 +1,106 @@
+#about {
+
+  .about-header {
+    padding: 6rem 0;
+
+    h1 {
+      font-size: $responsive-font-xl;
+      font-weight: $font-weight-7;
+      text-align: center;
+    }
+  }
+
+  .about-section {
+    @include row-center-center;
+    position: relative;
+    background: $primary;
+    color: $secondary;
+
+    @include lg {
+      height: 100vh;
+    }
+
+    .text-container {
+      @include col-center-center;
+      padding: $base-padding * 4 $base-padding;
+      z-index: 20;
+
+      @include lg {
+          padding: 0;
+          align-items: flex-start;
+      }
+
+      .about-section-title {
+        font-size: $base-font-size * 1.75;
+
+        @include md {
+          font-size: $base-font-size * 2.5;
+        }
+
+        @include lg {
+          font-size: $base-font-size * 3;
+          padding: $base-padding $base-padding * 2;
+        }
+      }
+
+      .section-text {
+        padding: $base-padding;
+
+        @include lg {
+          font-size: $base-font-size * 1.5;
+          padding: $base-padding $base-padding * 2;
+        }
+      }
+    }
+
+    svg {
+      display: none;
+
+      @include lg {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 25%;
+        height: 100%;
+        z-index: 10;
+        fill: currentColor;
+        color: $primary;
+      }
+    }
+
+    .svg-two {
+      color: #f4f4f4;
+    }
+
+    .img-container {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+
+      @include lg {
+        height: 100%;
+        width: 50%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .section-two {
+    background: #f4f4f4;
+    color:$primary;
+  }
+
+  #skills-section {
+    transition: 0.5s;
+    position: relative;
+    background: rgba(0, 0, 0, 0.05);
+  }
+}

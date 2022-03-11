@@ -1,0 +1,66 @@
+@use "sass:math";
+
+$justify-values: flex-start, flex-end, center, space-between, space-around;
+
+$align-values: flex-start, flex-end, center, baseline, stretch;
+
+// base layout mixins and classes
+@mixin row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin row-center-center {
+  @include row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin col-center-center {
+  @include col;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin row-around-center {
+  @include row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin col-around-center {
+  @include col;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.row {
+  @include row
+}
+
+.col {
+  @include col
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+// justify content classes
+@each $val in $justify-values {
+  .justify-#{$val} {
+    justify-content: $val;
+  }
+}
+
+// align items classes
+@each $val in $align-values {
+  .align-#{$val} {
+    align-items: $val;
+  }
+}

@@ -1,0 +1,11 @@
+#footer {
+  @include col-center-center;
+
+  .footer-nav {
+    @include col-center-center;
+
+    @include sm {
+      flex-direction: row;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+#about {
+  background: #f4f4f4;
+
+  .about-container {
+    padding-top: 9rem;
+  }
+}
+
+.hex-container {
+  @include row;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  &:hover ~ div {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 255, 0.3);
+  }
+
+  .hexagon-backing {
+    position: relative;
+    width: 175px;
+    height: 200px;
+    margin-top: 50px;
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    background: #6666ff;
+    transition: 0.3s;
+
+    .hexagon {
+      @include absolute-center;
+      width: 97.5%;
+      height: 97.5%;
+      clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.about-card {
+  padding: 3rem;
+  background: #f4f4f4;
+  box-shadow: 0 0 5px 5px rgb(0, 0, 0, 0.3);
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0 0 5px 5px rgb(0, 0, 255, 0.3);
+  }
+
+  button {
+    @include button;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      color: #f4f4f4;
+      background-color: transparent;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      right: 100%;
+      bottom: 100%;
+      background: $blue;
+      overflow: hidden;
+      transition: 0.5s ease;
+    }
+
+    &:hover::before {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 1;
+      z-index: -1;
+    }
+
+    a {
+      cursor: pointer;
+    }
+  }
+}
