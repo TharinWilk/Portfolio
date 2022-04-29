@@ -5,29 +5,28 @@ JS<template lang="html">
     </section>
 
     <section class="projects-section row">
-      <ProjectWindow >
+      <ProjectWindow :view="view">
         <template #img>
-          <img src="@/assets/Flashcard.png" alt="Flashcard website">
+          <img src="@/assets/workout-assistant.png" alt="Workout Assistant">
         </template>
 
         <template #name class="project-name">
-          <h3>Flashcard App</h3>
+          <h3>Workout Assistant</h3>
         </template>
 
         <template #description>
-          <p>An animated flashcard web app that stores data within the browser's local storage. Built with
-             <span class="font-bold">HTML</span>,
-             <span class="font-bold">CSS</span>, and
-             <span class="font-bold">Vue.js</span>.</p>
+          <p>A static web app that generates workouts and provides exercise guidance for users. Additionally it can save your favorite exercises and workouts. This app was developed using
+            <span class="font-bold">Nuxt.Js</span> and
+            <span class="font-bold">Vuetify</span>.</p>
         </template>
 
         <template #links>
           <div class="pr-1">
-            <a href="https://github.com/TharinWilk/flashcard-app" target="_blank">Github</a>
+            <a href="https://github.com/TharinWilk/workout-assistant" target="_blank">Github</a>
           </div>
 
           <div class="pr-1">
-            <a href="https://tharinwilk.github.io/flashcard-app/" target="_blank">Live Site</a>
+            <a href="https://tharinwilk.github.io/workout-assistant/" target="_blank">Live Site</a>
           </div>
         </template>
       </ProjectWindow>
@@ -55,6 +54,33 @@ JS<template lang="html">
 
           <div class="pr-1">
             <a href="https://tharinwilk.github.io/ice-cream-app/" target="_blank">Live Site</a>
+          </div>
+        </template>
+      </ProjectWindow>
+
+      <ProjectWindow >
+        <template #img>
+          <img src="@/assets/Flashcard.png" alt="Flashcard website">
+        </template>
+
+        <template #name class="project-name">
+          <h3>Flashcard App</h3>
+        </template>
+
+        <template #description>
+          <p>An animated flashcard web app that stores data within the browser's local storage. Built with
+             <span class="font-bold">HTML</span>,
+             <span class="font-bold">CSS</span>, and
+             <span class="font-bold">Vue.js</span>.</p>
+        </template>
+
+        <template #links>
+          <div class="pr-1">
+            <a href="https://github.com/TharinWilk/flashcard-app" target="_blank">Github</a>
+          </div>
+
+          <div class="pr-1">
+            <a href="https://tharinwilk.github.io/flashcard-app/" target="_blank">Live Site</a>
           </div>
         </template>
       </ProjectWindow>
