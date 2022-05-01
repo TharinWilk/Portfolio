@@ -70,6 +70,10 @@
       .bootstrap {
         color: #563d7c;
       }
+
+      .gulp {
+        color: #d44a48;
+      }
     }
 
     .skill-hex {
@@ -120,6 +124,38 @@
 
     @include md{
       transform: translate(125px, 75px);
+    }
+  }
+
+  #nuxt-hex {
+    transform: translate(125px, 0px);
+
+    @include md{
+      transform: translate(250px, 0px);
+    }
+  }
+
+  #vuetify-hex {
+    transform: translate(125px, 75px);
+
+    @include md{
+      transform: translate(250px, 150px);
+    }
+  }
+
+  #typescript-hex {
+    transform: translate(-125px, 0px);
+
+    @include md{
+      transform: translate(-250px, 0px);
+    }
+  }
+
+  #gulp-hex {
+    transform: translate(-125px, 75px);
+
+    @include md{
+      transform: translate(-250px, 150px);
     }
   }
 }

@@ -116,6 +116,30 @@
               <fa :icon="['fab', 'bootstrap']" class="skill-icon bootstrap" />
             </template>
           </skill>
+
+          <skill id="nuxt-hex">
+            <template #skill>
+              <img class="skill-icon" src="@/assets/nuxt-js.png" alt="">
+            </template>
+          </skill>
+
+          <skill id="vuetify-hex">
+            <template #skill>
+              <img class="skill-icon" src="https://iconape.com/wp-content/png_logo_vector/vuetify.png" alt="">
+            </template>
+          </skill>
+
+          <skill id="typescript-hex">
+            <template #skill>
+              <img class="skill-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png" alt="">
+            </template>
+          </skill>
+
+          <skill id="gulp-hex">
+            <template #skill>
+              <fa :icon="['fab', 'gulp']" class="skill-icon gulp" />
+            </template>
+          </skill>
         </div>
       </div>
     </section>
