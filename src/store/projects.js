@@ -25,23 +25,22 @@ export const useProjectStore = defineStore("projects", () => {
       ],
     },
     {
-      title: "Otto's Ice Cream",
-      description: `<p>
-          A quick and responsive marketing SPA for an ice cream shop. Designed
-          using <span class="font-bold">HTML</span>,
-          <span class="font-bold">Tailwindcss</span>, and
-          <span class="font-bold">Vue.js</span>.
+      title: "Home Depot Rebuild",
+      description: ` <p>
+          This is a redesign of Home Depot's Homepage using a more modern look. This project utilizes
+          <span class="font-bold">Nuxt.Js 3</span> and
+          <span class="font-bold">Bootstrap</span>.
         </p>`,
-      image: "/images/Ice-cream.png",
-      alt: "Ice cream shop website",
+      image: "/images/home-depot.png",
+      alt: "Home Depot Redesign",
       links: [
         {
           name: "Github",
-          link: "https://github.com/TharinWilk/ice-cream-app",
+          link: "https://github.com/TharinWilk/home-depot-rebuild",
         },
         {
           name: "Live Site",
-          link: "https://tharinwilk.github.io/ice-cream-app/",
+          link: "https://tharinwilk.github.io/home-depot-rebuild/",
         },
       ],
     },
@@ -63,6 +62,27 @@ export const useProjectStore = defineStore("projects", () => {
         {
           name: "Live Site",
           link: "https://tharinwilk.github.io/flashcard-app/",
+        },
+      ],
+    },
+    {
+      title: "Otto's Ice Cream",
+      description: `<p>
+          A quick and responsive marketing SPA for an ice cream shop. Designed
+          using <span class="font-bold">HTML</span>,
+          <span class="font-bold">Tailwindcss</span>, and
+          <span class="font-bold">Vue.js</span>.
+        </p>`,
+      image: "/images/Ice-cream.png",
+      alt: "Ice cream shop website",
+      links: [
+        {
+          name: "Github",
+          link: "https://github.com/TharinWilk/ice-cream-app",
+        },
+        {
+          name: "Live Site",
+          link: "https://tharinwilk.github.io/ice-cream-app/",
         },
       ],
     },
