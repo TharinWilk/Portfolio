@@ -464,7 +464,7 @@ h2 {
   height: 4rem;
   filter: blur(4rem);
   z-index: -1;
-  transition: 0.15s;
+  transition: 50ms;
 }
 
 #about {

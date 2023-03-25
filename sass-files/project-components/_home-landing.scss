@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: URL('./hex-background.png');
+  background-image: URL("./hex-background.png");
   box-shadow: inset 0 0 1rem 1rem #f4f4f4;
 }
 
@@ -30,8 +30,8 @@
     font-weight: $font-weight-7;
   }
 
-  h2  {
-    font-size: $responsive-font-md
+  h2 {
+    font-size: $responsive-font-md;
   }
 
   button {
@@ -51,5 +51,5 @@
   height: 4rem;
   filter: blur(4rem);
   z-index: -1;
-  transition: 0.15s;
+  transition: 50ms;
 }
