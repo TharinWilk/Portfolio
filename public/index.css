@@ -209,11 +209,10 @@ object {
 }
 
 .navbar {
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   padding: 1rem 1rem;
-  transition: 0.4s ease-in;
   z-index: 100;
 }
 @media (min-width: 480px) {
@@ -222,6 +221,12 @@ object {
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .navbar {
+    position: fixed;
+    transition: 0.4s ease-in;
+  }
+}
 .text-center {
   text-align: center;
 }
@@ -325,7 +330,7 @@ h2 {
   .sliding-navbar .nav-name {
     position: relative;
     margin: 0.25rem clamp(0.25rem, 0.75vw + 0.05rem, 0.5rem) 0.25rem clamp(0.25rem, 0.75vw + 0.05rem, 0.5rem);
-    animation: slide-left-in 1s forwards;
+    animation: slide-left-in 0s forwards;
     font-size: 1.25rem;
   }
 }
@@ -380,7 +385,6 @@ h2 {
   width: 0%;
   overflow: hidden;
   border-bottom: 3px solid #0000FF;
-  transition: 0.5s ease;
 }
 .nav-link:hover::before {
   width: 100%;
@@ -389,6 +393,15 @@ h2 {
   color: #0000FF;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .sliding-navbar .nav-name {
+    animation-duration: 1s;
+  }
+
+  .nav-link::before {
+    transition: 0.5s ease;
+  }
+}
 #footer {
   display: flex;
   flex-direction: column;
@@ -446,15 +459,16 @@ h2 {
   color: white;
 }
 
-.light-effect {
-  position: absolute;
-  width: 4rem;
-  height: 4rem;
-  filter: blur(4rem);
-  z-index: -1;
-  transition: 50ms;
+@media (prefers-reduced-motion: no-preference) {
+  .light-effect {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    filter: blur(4rem);
+    z-index: -1;
+    transition: 50ms;
+  }
 }
-
 #about {
   display: grid;
   place-items: center;
@@ -521,7 +535,7 @@ h2 {
 }
 .about-card button:hover {
   color: #f4f4f4;
-  background-color: transparent;
+  background-color: #0000FF;
 }
 .about-card button::before {
   content: "";
@@ -532,20 +546,29 @@ h2 {
   bottom: 100%;
   background: #0000FF;
   overflow: hidden;
-  transition: 0.5s ease;
-}
-.about-card button:hover::before {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  opacity: 1;
-  z-index: -1;
 }
 .about-card button a {
   cursor: pointer;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .about-container button:hover {
+    background-color: transparent;
+  }
+
+  .about-container button:hover::before {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    z-index: -1;
+  }
+
+  .about-container button::before {
+    transition: 0.5s ease;
+  }
+}
 #projects-section {
   background: transparent;
 }
@@ -575,6 +598,7 @@ h2 {
 }
 #projects-section .router-btn button:hover {
   color: #f4f4f4;
+  background-color: #0000FF;
 }
 #projects-section .router-btn button::before {
   position: absolute;
@@ -584,7 +608,6 @@ h2 {
   height: 100%;
   width: 0;
   background: #0000FF;
-  transition: 0.5s;
 }
 #projects-section .router-btn button::after {
   position: absolute;
@@ -594,11 +617,6 @@ h2 {
   height: 100%;
   width: 0;
   background: #0000FF;
-  transition: 0.5s;
-}
-#projects-section .router-btn button:hover::before, #projects-section .router-btn button:hover::after {
-  width: 100%;
-  z-index: -1;
 }
 
 .project-container {
@@ -619,9 +637,6 @@ h2 {
 @media (min-width: 960px) {
   .project-container {
     width: 30%;
-  }
-  .project-container:hover {
-    transform: translateY(-1rem);
   }
 }
 .project-container .project-backing {
@@ -671,33 +686,55 @@ h2 {
   background: black;
 }
 
-.window-bg {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: URL("./hex-background.png");
-  box-shadow: inset 0 0 1rem 1rem #f4f4f4;
-}
-.window-bg::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: -7rem;
-  width: 0.5rem;
-  height: 100%;
-  transform: rotate(45deg);
-  filter: blur(0.25rem);
-  background: #0000FF;
-  z-index: -1;
-  transition: 0.75s ease-in-out;
-}
-
 .light::before {
   left: calc(100% + 7rem);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  #projects-section .router-btn button {
+    background-color: none;
+  }
+
+  #projects-section .router-btn button:hover::before,
+#projects-section .router-btn button:hover::after {
+    width: 100%;
+    z-index: -1;
+  }
+
+  #projects-section .router-btn button::before,
+#projects-section .router-btn button::after {
+    transition: 0.5s;
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 960px) {
+  .project-container:hover {
+    transform: translateY(-1rem);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .window-bg {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: URL("./hex-background.png");
+    box-shadow: inset 0 0 1rem 1rem #f4f4f4;
+  }
+  .window-bg::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -7rem;
+    width: 0.5rem;
+    height: 100%;
+    transform: rotate(45deg);
+    filter: blur(0.25rem);
+    background: #0000FF;
+    z-index: -1;
+    transition: 0.75s ease-in-out;
+  }
+}
 #projects .projects-title {
   padding: 6rem 0;
 }
@@ -1023,7 +1060,7 @@ h2 {
 }
 .contact-icons li a:hover::after {
   display: block;
-  animation: fade-in-up 1s forwards;
+  animation: fade-in-up 0s forwards;
 }
 .contact-icons li a .contact-icon {
   width: 2rem;
@@ -1042,34 +1079,68 @@ h2 {
   color: #0000FF;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .contact-icons li a:hover::after {
+    animation: fade-in-up 1s forwards;
+  }
+}
 .fade-in {
-  animation: fade-in 0.2s forwards;
+  animation: fade-in 0.01s forwards;
 }
 
 .fade-in-slow {
-  animation: fade-in 2s forwards;
+  animation: fade-in 0.01s forwards;
 }
 
 .fade-out {
-  animation: fade-out 0.2s forwards;
+  animation: fade-out 0s forwards;
 }
 
 .slide-right-out {
-  animation: slide-right-out 1s forwards;
+  animation: slide-right-out 0s forwards;
 }
 
 .slide-right-in {
-  animation: slide-right-in 1s forwards;
+  animation: slide-right-in 0s forwards;
 }
 
 .slide-left-out {
-  animation: slide-left-out 1s forwards;
+  animation: slide-left-out 0s forwards;
 }
 
 .slide-left-in {
-  animation: slide-left-in 1s forwards;
+  animation: slide-left-in 0s forwards;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fade-in 0.2s forwards;
+  }
+
+  .fade-in-slow {
+    animation: fade-in 2s forwards;
+  }
+
+  .fade-out {
+    animation: fade-out 0.2s forwards;
+  }
+
+  .slide-right-out {
+    animation: slide-right-out 1s forwards;
+  }
+
+  .slide-right-in {
+    animation: slide-right-in 1s forwards;
+  }
+
+  .slide-left-out {
+    animation: slide-left-out 1s forwards;
+  }
+
+  .slide-left-in {
+    animation: slide-left-in 1s forwards;
+  }
+}
 @keyframes fade-in {
   0% {
     visibility: visible;

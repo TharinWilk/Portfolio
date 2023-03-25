@@ -62,7 +62,7 @@
 
     &:hover {
       color: #f4f4f4;
-      background-color: transparent;
+      background-color: $blue;
     }
 
     &::before {
@@ -74,20 +74,27 @@
       bottom: 100%;
       background: $blue;
       overflow: hidden;
-      transition: 0.5s ease;
-    }
-
-    &:hover::before {
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      opacity: 1;
-      z-index: -1;
     }
 
     a {
       cursor: pointer;
     }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .about-container button:hover {
+    background-color: transparent;
+  }
+  .about-container button:hover::before {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    z-index: -1;
+  }
+  .about-container button::before {
+    transition: 0.5s ease;
   }
 }

@@ -1,48 +1,81 @@
 // animation utility classes
 .fade-in {
-  animation: fade-in 0.2s forwards;
+  animation: fade-in 0.01s forwards;
 }
 
 .fade-in-slow {
-  animation: fade-in 2s forwards;
+  animation: fade-in 0.01s forwards;
 }
 
 .fade-out {
-  animation: fade-out 0.2s forwards;
+  animation: fade-out 0s forwards;
 }
 
 .slide-right-out {
-  animation: slide-right-out 1s forwards;
+  animation: slide-right-out 0s forwards;
 }
 
 .slide-right-in {
-  animation: slide-right-in 1s forwards;
+  animation: slide-right-in 0s forwards;
 }
 
 .slide-left-out {
-  animation: slide-left-out 1s forwards;
+  animation: slide-left-out 0s forwards;
 }
 
 .slide-left-in {
-  animation: slide-left-in 1s forwards;
+  animation: slide-left-in 0s forwards;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fade-in 0.2s forwards;
+  }
+
+  .fade-in-slow {
+    animation: fade-in 2s forwards;
+  }
+
+  .fade-out {
+    animation: fade-out 0.2s forwards;
+  }
+
+  .slide-right-out {
+    animation: slide-right-out 1s forwards;
+  }
+
+  .slide-right-in {
+    animation: slide-right-in 1s forwards;
+  }
+
+  .slide-left-out {
+    animation: slide-left-out 1s forwards;
+  }
+
+  .slide-left-in {
+    animation: slide-left-in 1s forwards;
+  }
+}
 
 // animation keyframes
 @keyframes fade-in {
   0% {
     visibility: visible;
     opacity: 0;
-  };
+  }
   100% {
     visibility: visible;
-    opacity: 1
-  };
+    opacity: 1;
+  }
 }
 
 @keyframes fade-out {
-  0% { opacity: 1};
-  100% { opacity: 0};
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes slide-right-out {
@@ -55,7 +88,7 @@
   }
   100% {
     transform: translateX(100vw);
-    opacity: 0
+    opacity: 0;
   }
 }
 
@@ -69,7 +102,7 @@
   }
   100% {
     transform: translateX(100vw);
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -83,7 +116,7 @@
   }
   100% {
     transform: translateX(0);
-    opacity: 0
+    opacity: 0;
   }
 }
 
@@ -97,7 +130,7 @@
   }
   100% {
     transform: translateX(0vw);
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -105,7 +138,7 @@
   0% {
     opacity: 0;
     bottom: -50%;
-  };
+  }
   100% {
     opacity: 1;
     bottom: -25%;

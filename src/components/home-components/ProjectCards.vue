@@ -36,13 +36,6 @@ export default {
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
   },
-  computed: {
-    template(html) {
-      return {
-        template: html,
-      };
-    },
-  },
   methods: {
     fadeInOut(target) {
       target.classList.add("light");

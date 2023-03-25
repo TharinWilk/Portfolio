@@ -34,7 +34,7 @@
       }
       &:hover::after {
         display: block;
-        animation: fade-in-up 1s forwards;
+        animation: fade-in-up 0s forwards;
       }
 
       .contact-icon {
@@ -53,5 +53,11 @@
         }
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .contact-icons li a:hover::after {
+    animation: fade-in-up 1s forwards;
   }
 }

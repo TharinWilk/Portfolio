@@ -4,23 +4,22 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-};
+}
 
 .shadow {
-  box-shadow: $base-box-shadow
+  box-shadow: $base-box-shadow;
 }
 
 .navbar {
   @extend %flex-layout;
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   padding: $base-padding $base-padding;
-  transition: .4s ease-in;
   z-index: 100;
 
   @include sm {
-  padding: $base-padding $base-padding * 2;
+    padding: $base-padding $base-padding * 2;
   }
 
   .site-title {
@@ -28,13 +27,20 @@
   }
 
   .container {
-    @extend %flex-layout
+    @extend %flex-layout;
   }
-};
+}
 
 @each $key, $val in $colors {
   .navbar-#{$key} {
     @extend .navbar;
     background-color: $val;
   }
-};
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .navbar {
+    position: fixed;
+    transition: 0.4s ease-in;
+  }
+}

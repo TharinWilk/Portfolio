@@ -17,8 +17,8 @@
     }
     @include md {
       position: relative;
-      margin: .25rem $clamp-xs .25rem $clamp-xs;
-      animation: slide-left-in 1s forwards;
+      margin: 0.25rem $clamp-xs 0.25rem $clamp-xs;
+      animation: slide-left-in 0s forwards;
       font-size: $base-font-size * 1.25;
     }
   }
@@ -35,12 +35,12 @@
 
 .responsive-nav {
   .nav-ham {
-    padding: $base-padding * .125;
+    padding: $base-padding * 0.125;
     border-radius: $border-radius-sm;
     transition: 0.5s;
     cursor: pointer;
     &:hover {
-      box-shadow: 0 0 5px 0 rgba(0, 0, 225, 0.75)
+      box-shadow: 0 0 5px 0 rgba(0, 0, 225, 0.75);
     }
     @include md {
       display: none;
@@ -61,8 +61,8 @@
 
 .nav-link {
   position: relative;
-  margin: .25rem $clamp-xs .25rem $clamp-xs;
-  transition: .2s;
+  margin: 0.25rem $clamp-xs 0.25rem $clamp-xs;
+  transition: 0.2s;
   cursor: pointer;
   &::before {
     content: attr(data-link);
@@ -71,7 +71,6 @@
     width: 0%;
     overflow: hidden;
     border-bottom: 3px solid $blue;
-    transition: .5s ease;
   }
   &:hover {
     &::before {
@@ -80,5 +79,14 @@
   }
   &.router-link-exact-active {
     color: $blue;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sliding-navbar .nav-name {
+    animation-duration: 1s;
+  }
+  .nav-link::before {
+    transition: 0.5s ease;
   }
 }
