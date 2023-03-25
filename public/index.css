@@ -101,14 +101,6 @@ object {
   align-items: center;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -204,7 +196,7 @@ object {
   background-color: #0000FF;
 }
 
-.navbar .container, .navbar {
+ .navbar {
   width: 100%;
   display: flex;
   align-items: center;
@@ -246,10 +238,6 @@ object {
   padding-bottom: 1rem;
 }
 
-.pb-6 {
-  padding-bottom: 6rem;
-}
-
 .m-1 {
   margin: 1em;
 }
@@ -260,6 +248,10 @@ object {
 
 .mb-1 {
   margin-bottom: 1em;
+}
+
+.mb-6 {
+  margin-bottom: 6em;
 }
 
 .o-30 {
@@ -287,7 +279,13 @@ object {
 }
 
 #home {
-  background: transparent;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: URL("./hex-background.png");
+  box-shadow: inset 0 0 1rem 1rem #f4f4f4;
 }
 
 h2 {
@@ -409,16 +407,6 @@ h2 {
   }
 }
 
-.landing-bg {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: URL("./hex-background.png");
-  box-shadow: inset 0 0 1rem 1rem #f4f4f4;
-}
-
 .landing-content {
   height: 80vh;
   padding-top: 4.25rem;
@@ -468,10 +456,13 @@ h2 {
 }
 
 #about {
-  background: #f4f4f4;
+  display: grid;
+  place-items: center;
 }
 #about .about-container {
   padding-top: 9rem;
+  width: 80%;
+  max-width: 1200px;
 }
 
 .hex-container {

@@ -1,6 +1,6 @@
 <template lang="html">
   <section id="landing">
-    <div class="landing-bg" @mousemove="moveLightEffect">
+    <div class="landing-bg">
       <div class="landing-content row justify-center">
         <span class="col-12-md" @mouseover="hoverIn">Creative</span>
         <span class="col-6-md" @mouseover="hoverIn">Motivated</span>
@@ -24,18 +24,12 @@
         <span class="col-12-md" @mouseover="hoverIn">Driven</span>
       </div>
     </div>
-
-    <div class="light-effect bg-blue-light-1" ref="light"></div>
   </section>
 </template>
 
 <script>
 export default {
   methods: {
-    moveLightEffect(e) {
-      this.$refs.light.style.left = `${e.clientX - 32}px`;
-      this.$refs.light.style.top = `${e.clientY - 32 + window.scrollY}px`;
-    },
     hoverIn(e) {
       e.target.style.opacity = 1;
     },

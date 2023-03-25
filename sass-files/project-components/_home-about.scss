@@ -1,8 +1,11 @@
 #about {
-  background: #f4f4f4;
+  display: grid;
+  place-items: center;
 
   .about-container {
     padding-top: 9rem;
+    width: 80%;
+    max-width: 1200px;
   }
 }
 

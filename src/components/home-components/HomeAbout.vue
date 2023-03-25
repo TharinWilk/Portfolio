@@ -1,5 +1,5 @@
 <template lang="html">
-  <section id="about" class="relative container pb-6">
+  <section id="about" class="relative mb-6">
     <div class="about-container">
       <div class="hex-container">
         <div class="hexagon-backing bg-blue-light-4">
