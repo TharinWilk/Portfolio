@@ -25,7 +25,8 @@ h4 {
   font-weight: inherit;
 }
 
- ul {
+
+ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -801,6 +802,9 @@ h2 {
 .skills-area .skill-container .skill .bootstrap {
   color: #563d7c;
 }
+.skills-area .skill-container .skill .gulp {
+  color: #d44a48;
+}
 .skills-area .skill-container .skill-hex {
   position: absolute;
   top: 50%;
@@ -851,6 +855,38 @@ h2 {
 @media (min-width: 640px) {
   .skills-area #tailwind-hex {
     transform: translate(125px, 75px);
+  }
+}
+.skills-area #nuxt-hex {
+  transform: translate(125px, 0px);
+}
+@media (min-width: 640px) {
+  .skills-area #nuxt-hex {
+    transform: translate(250px, 0px);
+  }
+}
+.skills-area #vuetify-hex {
+  transform: translate(125px, 75px);
+}
+@media (min-width: 640px) {
+  .skills-area #vuetify-hex {
+    transform: translate(250px, 150px);
+  }
+}
+.skills-area #typescript-hex {
+  transform: translate(-125px, 0px);
+}
+@media (min-width: 640px) {
+  .skills-area #typescript-hex {
+    transform: translate(-250px, 0px);
+  }
+}
+.skills-area #gulp-hex {
+  transform: translate(-125px, 75px);
+}
+@media (min-width: 640px) {
+  .skills-area #gulp-hex {
+    transform: translate(-250px, 150px);
   }
 }
 
