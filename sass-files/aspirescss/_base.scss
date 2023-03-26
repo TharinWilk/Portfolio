@@ -9,10 +9,6 @@
   line-height: 1.4;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: "Roboto Slab", serif;
   color: $primary;
@@ -63,4 +59,10 @@ object {
   border-width: 0;
   border-style: solid;
   border-color: theme("borderColor.DEFAULT", currentColor);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
