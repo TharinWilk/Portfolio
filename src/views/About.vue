@@ -73,7 +73,7 @@
 
       <div class="img-container col-12 col-6-lg">
         <img
-          src="https://www.egeniq.nl/sites/default/files/2020-06/frontend_webdeveloper.jpg"
+          src="https://i.pinimg.com/originals/23/8f/6b/238f6b5ea5ab93832c281b42d3a1a853.jpg"
           alt="A graphic of web development on a variety of screen sizes."
         />
       </div>
