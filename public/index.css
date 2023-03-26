@@ -768,156 +768,71 @@ h2 {
 }
 
 .skills-area {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 2.5rem;
+  width: 100%;
+  background-image: URL("./hex-background.png");
 }
-.skills-area .skill-container {
+
+.skills-grid {
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: fit-content;
+  max-width: 1296px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  background-color: transparent;
+}
+.skills-grid .skill-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  margin: 2px auto;
-  height: 70px;
-  width: 80px;
+  position: relative;
+  height: 140px;
+  width: 160px;
+  margin: 5px auto;
   background-color: #343434;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   transition: 0.5s;
 }
-.skills-area .skill-container:hover {
+.skills-grid .skill-container:hover,
+.skills-grid .skill-container :focus {
   background: #0000FF;
 }
-@media (min-width: 640px) {
-  .skills-area .skill-container {
-    height: 140px;
-    width: 160px;
-    margin: 5px auto;
-  }
-}
-.skills-area .skill-container .skill {
+.skills-grid .skill-container .skill {
   position: relative;
   z-index: 20;
 }
-.skills-area .skill-container .skill .skill-icon {
-  width: 2rem;
-  height: 2rem;
+.skills-grid .skill-container .skill .skill-icon {
+  width: 4rem;
+  height: 4rem;
+  transition: 0.5s;
 }
-@media (min-width: 640px) {
-  .skills-area .skill-container .skill .skill-icon {
-    width: 4rem;
-    height: 4rem;
-  }
+.skills-grid .skill-container .skill img {
+  width: 4rem;
+  transition: 0.5s;
 }
-.skills-area .skill-container .skill .html {
-  color: #f06529;
-}
-.skills-area .skill-container .skill .css {
-  color: #2965f1;
-}
-.skills-area .skill-container .skill .js {
-  color: #F0DB4F;
-}
-.skills-area .skill-container .skill .vue {
-  color: #42b883;
-}
-.skills-area .skill-container .skill .sass {
-  color: #CD6799;
-}
-.skills-area .skill-container .skill .bootstrap {
-  color: #563d7c;
-}
-.skills-area .skill-container .skill .gulp {
-  color: #d44a48;
-}
-.skills-area .skill-container .skill-hex {
+.skills-grid .skill-container .skill-hex {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 63px;
-  width: 72px;
+  height: 126px;
+  width: 142px;
   background-color: #f4f4f4;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   z-index: 10;
 }
-@media (min-width: 640px) {
-  .skills-area .skill-container .skill-hex {
-    height: 126px;
-    width: 142px;
-  }
-}
-.skills-area #html-hex, .skills-area #vue-hex, .skills-area #bootstrap-hex {
-  position: relative;
-}
-.skills-area #css-hex {
-  transform: translate(-67px, -37px);
-}
-@media (min-width: 640px) {
-  .skills-area #css-hex {
-    transform: translate(-125px, -75px);
-  }
-}
-.skills-area #js-hex {
-  transform: translate(67px, -37px);
-}
-@media (min-width: 640px) {
-  .skills-area #js-hex {
-    transform: translate(125px, -75px);
-  }
-}
-.skills-area #sass-hex {
-  transform: translate(-67px, 37px);
-}
-@media (min-width: 640px) {
-  .skills-area #sass-hex {
-    transform: translate(-125px, 75px);
-  }
-}
-.skills-area #tailwind-hex {
-  transform: translate(67px, 37px);
-}
-@media (min-width: 640px) {
-  .skills-area #tailwind-hex {
-    transform: translate(125px, 75px);
-  }
-}
-.skills-area #nuxt-hex {
-  transform: translate(125px, 0px);
-}
-@media (min-width: 640px) {
-  .skills-area #nuxt-hex {
-    transform: translate(250px, 0px);
-  }
-}
-.skills-area #vuetify-hex {
-  transform: translate(125px, 75px);
-}
-@media (min-width: 640px) {
-  .skills-area #vuetify-hex {
-    transform: translate(250px, 150px);
-  }
-}
-.skills-area #typescript-hex {
-  transform: translate(-125px, 0px);
-}
-@media (min-width: 640px) {
-  .skills-area #typescript-hex {
-    transform: translate(-250px, 0px);
-  }
-}
-.skills-area #gulp-hex {
-  transform: translate(-125px, 75px);
-}
-@media (min-width: 640px) {
-  .skills-area #gulp-hex {
-    transform: translate(-250px, 150px);
-  }
-}
 
+@media (prefers-reduced-motion: no-preference) {
+  .skill-container:hover .skill .skill-icon,
+.skill-container:hover .skill img,
+.skill-container :focus .skill .skill-icon,
+.skill-container :focus .skill img {
+    scale: 1.2;
+  }
+}
 #about .about-header {
   padding: 6rem 0;
 }
@@ -1019,6 +934,7 @@ h2 {
   color: #343434;
 }
 #about #skills-section {
+  width: 100%;
   transition: 0.5s;
   position: relative;
   background: rgba(0, 0, 0, 0.05);

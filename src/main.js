@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
-  faGithub,
   faLinkedin,
   faHtml5,
   faCss3,
@@ -13,6 +12,11 @@ import {
   faVuejs,
   faBootstrap,
   faGulp,
+  faPhp,
+  faGitAlt,
+  faGithub,
+  faGitlab,
+  faFigma,
 } from "@fortawesome/free-brands-svg-icons";
 import App from "./App.vue";
 import router from "./router";
@@ -20,7 +24,6 @@ import router from "./router";
 const pinia = createPinia();
 
 library.add(
-  faGithub,
   faLinkedin,
   faEnvelope,
   faHtml5,
@@ -29,7 +32,12 @@ library.add(
   faSass,
   faVuejs,
   faBootstrap,
-  faGulp
+  faGulp,
+  faPhp,
+  faGitAlt,
+  faGithub,
+  faGitlab,
+  faFigma
 );
 
 createApp(App)

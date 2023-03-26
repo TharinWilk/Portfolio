@@ -1,5 +1,4 @@
 #about {
-
   .about-header {
     padding: 6rem 0;
 
@@ -26,8 +25,8 @@
       z-index: 20;
 
       @include lg {
-          padding: 0;
-          align-items: flex-start;
+        padding: 0;
+        align-items: flex-start;
       }
 
       .about-section-title {
@@ -95,10 +94,11 @@
 
   .section-two {
     background: #f4f4f4;
-    color:$primary;
+    color: $primary;
   }
 
   #skills-section {
+    width: 100%;
     transition: 0.5s;
     position: relative;
     background: rgba(0, 0, 0, 0.05);

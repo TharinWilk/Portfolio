@@ -106,98 +106,33 @@
     </section>
 
     <section id="skills-section">
-      <div class="landing-bg">
-        <div class="section-title">
-          <h2>My Skills</h2>
-        </div>
-
-        <div class="skills-area">
-          <skill id="html-hex">
-            <template #skill>
-              <fa :icon="['fab', 'html5']" class="skill-icon html" />
-            </template>
-          </skill>
-
-          <skill id="css-hex">
-            <template #skill>
-              <fa :icon="['fab', 'css3']" class="skill-icon css" />
-            </template>
-          </skill>
-
-          <skill id="js-hex">
-            <template #skill>
-              <fa :icon="['fab', 'js-square']" class="skill-icon js" />
-            </template>
-          </skill>
-
-          <skill id="vue-hex">
-            <template #skill>
-              <fa :icon="['fab', 'vuejs']" class="skill-icon vue" />
-            </template>
-          </skill>
-
-          <skill id="sass-hex">
-            <template #skill>
-              <fa :icon="['fab', 'sass']" class="skill-icon sass" />
-            </template>
-          </skill>
-
-          <skill id="tailwind-hex">
-            <template #skill>
-              <img
-                class="skill-icon"
-                src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
-                alt=""
-              />
-            </template>
-          </skill>
-
-          <skill id="bootstrap-hex">
-            <template #skill>
-              <fa :icon="['fab', 'bootstrap']" class="skill-icon bootstrap" />
-            </template>
-          </skill>
-
-          <skill id="nuxt-hex">
-            <template #skill>
-              <img class="skill-icon" src="/images/nuxt-js.png" alt="" />
-            </template>
-          </skill>
-
-          <skill id="vuetify-hex">
-            <template #skill>
-              <img
-                class="skill-icon"
-                src="https://iconape.com/wp-content/png_logo_vector/vuetify.png"
-                alt=""
-              />
-            </template>
-          </skill>
-
-          <skill id="typescript-hex">
-            <template #skill>
-              <img
-                class="skill-icon"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png"
-                alt=""
-              />
-            </template>
-          </skill>
-
-          <skill id="gulp-hex">
-            <template #skill>
-              <fa :icon="['fab', 'gulp']" class="skill-icon gulp" />
-            </template>
-          </skill>
-        </div>
+      <div class="section-title">
+        <h2>My Skills</h2>
       </div>
+
+      <section class="skills-area">
+        <div class="skills-grid">
+          <Skill
+            v-for="skill in skillsStore.skills"
+            :key="skill.name"
+            :skill="skill"
+            :id="`${skill.name}-hex`"
+          />
+        </div>
+      </section>
     </section>
   </article>
 </template>
 
 <script>
 import Skill from "../components/Skill.vue";
+import { useSkillsStore } from "../store/skills";
 export default {
   components: { Skill },
+  data() {
+    return {
+      skillsStore: useSkillsStore(),
+    };
+  },
 };
 </script>

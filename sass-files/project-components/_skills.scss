@@ -9,28 +9,34 @@
 }
 
 .skills-area {
-  @include col-center-center;
+  width: 100%;
+  background-image: URL("./hex-background.png");
+}
+
+.skills-grid {
   position: relative;
-  padding: 2.5rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: fit-content;
+  max-width: 1296px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  background-color: transparent;
 
   .skill-container {
     @include row-center-center;
-    position: absolute;
-    margin: 2px auto;
-    height: 70px;
-    width: 80px;
+    position: relative;
+    height: 140px;
+    width: 160px;
+    margin: 5px auto;
     background-color: $primary;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     transition: 0.5s;
 
-    &:hover {
+    &:hover,
+    :focus {
       background: $blue;
-    }
-
-    @include md {
-      height: 140px;
-      width: 160px;
-      margin: 5px auto;
     }
 
     .skill {
@@ -38,124 +44,36 @@
       z-index: 20;
 
       .skill-icon {
-        width: 2rem;
-        height: 2rem;
-
-        @include md {
-          width: 4rem;
-          height: 4rem;
-        }
+        width: 4rem;
+        height: 4rem;
+        transition: 0.5s;
       }
 
-      .html {
-        color: #f06529;
-      }
-
-      .css {
-        color: #2965f1;
-      }
-
-      .js {
-        color: #F0DB4F;
-      }
-
-      .vue {
-        color: #42b883;
-      }
-
-      .sass {
-        color: #CD6799;
-      }
-
-      .bootstrap {
-        color: #563d7c;
-      }
-
-      .gulp {
-        color: #d44a48;
+      img {
+        width: 4rem;
+        transition: 0.5s;
       }
     }
 
     .skill-hex {
       @include absolute-center;
-      height: 63px;
-      width: 72px;
+      height: 126px;
+      width: 142px;
       background-color: #f4f4f4;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
       z-index: 10;
+    }
+  }
+}
 
-      @include md {
-        height: 126px;
-        width: 142px;
+@media (prefers-reduced-motion: no-preference) {
+  .skill-container {
+    &:hover,
+    :focus {
+      .skill .skill-icon,
+      .skill img {
+        scale: 1.2;
       }
-    }
-  }
-
-  #html-hex, #vue-hex, #bootstrap-hex {
-    position: relative;
-  }
-
-  #css-hex {
-    transform: translate(-67px, -37px);
-
-    @include md{
-      transform: translate(-125px, -75px);
-    }
-  }
-
-  #js-hex {
-    transform: translate(67px, -37px);
-
-    @include md{
-      transform: translate(125px, -75px);
-    }
-  }
-
-  #sass-hex {
-    transform: translate(-67px, 37px);
-
-    @include md{
-      transform: translate(-125px, 75px);
-    }
-  }
-
-  #tailwind-hex {
-    transform: translate(67px, 37px);
-
-    @include md{
-      transform: translate(125px, 75px);
-    }
-  }
-
-  #nuxt-hex {
-    transform: translate(125px, 0px);
-
-    @include md{
-      transform: translate(250px, 0px);
-    }
-  }
-
-  #vuetify-hex {
-    transform: translate(125px, 75px);
-
-    @include md{
-      transform: translate(250px, 150px);
-    }
-  }
-
-  #typescript-hex {
-    transform: translate(-125px, 0px);
-
-    @include md{
-      transform: translate(-250px, 0px);
-    }
-  }
-
-  #gulp-hex {
-    transform: translate(-125px, 75px);
-
-    @include md{
-      transform: translate(-250px, 150px);
     }
   }
 }
