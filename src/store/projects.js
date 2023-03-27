@@ -11,7 +11,7 @@ export const useProjectStore = defineStore("projects", () => {
           <span class="font-bold">Nuxt.Js</span> and
           <span class="font-bold">Vuetify</span>.
         </p>`,
-      image: "/images/workout-assistant.png",
+      image: "./workout-assistant.png",
       alt: "Workout Assistant",
       links: [
         {
@@ -31,7 +31,7 @@ export const useProjectStore = defineStore("projects", () => {
           <span class="font-bold">Nuxt.Js 3</span> and
           <span class="font-bold">Bootstrap</span>.
         </p>`,
-      image: "/images/home-depot.png",
+      image: "./home-depot.png",
       alt: "Home Depot Redesign",
       links: [
         {
@@ -52,7 +52,7 @@ export const useProjectStore = defineStore("projects", () => {
           <span class="font-bold">CSS</span>, and
           <span class="font-bold">Vue.js</span>.
         </p>`,
-      image: "/images/Flashcard.png",
+      image: "./Flashcard.png",
       alt: "Flashcard web app",
       links: [
         {
@@ -73,7 +73,7 @@ export const useProjectStore = defineStore("projects", () => {
           <span class="font-bold">Tailwindcss</span>, and
           <span class="font-bold">Vue.js</span>.
         </p>`,
-      image: "/images/Ice-cream.png",
+      image: "./Ice-cream.png",
       alt: "Ice cream shop website",
       links: [
         {
@@ -94,7 +94,7 @@ export const useProjectStore = defineStore("projects", () => {
           <span class="font-bold">CSS</span>, and
           <span class="font-bold">javascript</span>.
         </p>`,
-      image: "/images/Welding.png",
+      image: "./Welding.png",
       alt: "Corey's welding website",
       links: [
         {
@@ -115,7 +115,7 @@ export const useProjectStore = defineStore("projects", () => {
           <span class="font-bold">CSS</span>, and
           <span class="font-bold">javascript</span>.
         </p>`,
-      image: "/images/Spitzer-Pic.png",
+      image: "./Spitzer-Pic.png",
       alt: "Spitzer web app",
       links: [
         {
@@ -137,7 +137,7 @@ export const useProjectStore = defineStore("projects", () => {
           <span class="font-bold">SASS</span>, and
           <span class="font-bold">Vue.js</span>.
         </p>`,
-      image: "/images/Portfolio.png",
+      image: "./Portfolio.png",
       alt: "Portfolio web app",
       links: [
         {

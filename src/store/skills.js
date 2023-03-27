@@ -39,7 +39,7 @@ export const useSkillsStore = defineStore("skills", () => {
     },
     {
       name: "nuxt",
-      image: "/images/nuxt-js.png",
+      image: "./nuxt-js.png",
     },
     {
       name: "vuetify",
