@@ -8,7 +8,6 @@
       <ProjectCards
         v-for="project in projects"
         :key="project.title"
-        :view="view"
         :project="project"
       />
     </div>
@@ -29,7 +28,6 @@ export default {
   components: { ProjectCards },
   data() {
     return {
-      view: "Home",
       projectStore: useProjectStore(),
     };
   },

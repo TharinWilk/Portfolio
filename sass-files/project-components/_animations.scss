@@ -144,3 +144,14 @@
     bottom: -25%;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .light-effect {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    filter: blur(4rem);
+    z-index: -1;
+    transition: 50ms;
+  }
+}

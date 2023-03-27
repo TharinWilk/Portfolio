@@ -1,5 +1,5 @@
 <template lang="html">
-  <article id="about" class="article">
+  <article id="about" class="article" @mousemove="moveLightEffect">
     <section class="about-header">
       <h1 class="">About Me</h1>
     </section>
@@ -121,6 +121,8 @@
         </div>
       </section>
     </section>
+
+    <div class="light-effect bg-blue-light-1" ref="light"></div>
   </article>
 </template>
 
@@ -133,6 +135,12 @@ export default {
     return {
       skillsStore: useSkillsStore(),
     };
+  },
+  methods: {
+    moveLightEffect(e) {
+      this.$refs.light.style.left = `${e.clientX - 32}px`;
+      this.$refs.light.style.top = `${e.clientY - 32 + window.scrollY}px`;
+    },
   },
 };
 </script>

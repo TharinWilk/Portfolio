@@ -284,7 +284,9 @@ object {
   border-color: black;
 }
 
-#home {
+#home,
+#projects,
+#about {
   position: relative;
   top: 0;
   left: 0;
@@ -460,16 +462,6 @@ h2 {
   color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .light-effect {
-    position: absolute;
-    width: 4rem;
-    height: 4rem;
-    filter: blur(4rem);
-    z-index: -1;
-    transition: 50ms;
-  }
-}
 #about {
   display: grid;
   place-items: center;
@@ -663,7 +655,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
+  opacity: 1;
 }
 .project-container .project-info {
   width: 100%;
@@ -672,7 +664,7 @@ h2 {
 }
 .project-container .project-info .info-container {
   padding: 1rem;
-  opacity: 0;
+  opacity: 1;
 }
 .project-container .project-info .info-container .project-links div a {
   position: relative;
@@ -712,30 +704,6 @@ h2 {
     transform: translateY(-1rem);
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .window-bg {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: URL("./hex-background.png");
-    box-shadow: inset 0 0 1rem 1rem #f4f4f4;
-  }
-  .window-bg::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: -7rem;
-    width: 0.5rem;
-    height: 100%;
-    transform: rotate(45deg);
-    filter: blur(0.25rem);
-    background: #0000FF;
-    z-index: -1;
-    transition: 0.75s ease-in-out;
-  }
-}
 #projects .projects-title {
   padding: 6rem 0;
 }
@@ -770,7 +738,6 @@ h2 {
 
 .skills-area {
   width: 100%;
-  background-image: URL("./hex-background.png");
 }
 
 .skills-grid {
@@ -1136,5 +1103,15 @@ h2 {
   100% {
     opacity: 1;
     bottom: -25%;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .light-effect {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    filter: blur(4rem);
+    z-index: -1;
+    transition: 50ms;
   }
 }
