@@ -4,7 +4,7 @@
       <div class="hex-container">
         <div class="hexagon-backing bg-blue-light-4">
           <div class="hexagon">
-            <img src="/portrait1.jpeg" alt="Picture of Tharin Wilk" />
+            <img src="@/assets/portrait1.jpeg" alt="Picture of Tharin Wilk" />
           </div>
         </div>
       </div>
